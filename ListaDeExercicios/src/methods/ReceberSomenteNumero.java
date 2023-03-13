@@ -30,5 +30,29 @@ public class ReceberSomenteNumero {
 		return numeroDouble;
 
 	}
+	
+	public int ReceberIntFiltrado(String frase, String numero) {
+		
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+
+		int numeroInteger = 0;
+		boolean condition = true;
+		do {
+
+			try {
+				numeroInteger = Integer.valueOf(numero);
+				condition = false;
+			} catch (Exception e) {
+				System.out.println("Isso não é um número né po?");
+				System.out.print(frase);
+				numero = scanner.nextLine();
+			}
+
+		} while (condition);
+		
+		
+		return numeroInteger;
+	}
 
 }

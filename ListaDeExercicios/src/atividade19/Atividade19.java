@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import methods.ConsoleColors;
+
 public class Atividade19 {
 
 	public static void main(String[] args) {
@@ -15,9 +17,9 @@ public class Atividade19 {
 		for (int i = 0; i < 56; i++) {
 
 			Pessoa pessoa = new Pessoa();
-			System.out.println("Digite seu nome : ");
+			System.out.print("Digite seu nome : ");
 			pessoa.setNome(scanner.next());
-			System.out.println("Digite seu sexo (M)(F)");
+			System.out.print("Digite seu sexo (M)(F) : ");
 			sexo = scanner.next();
 			sexo = sexo.toUpperCase();
 			boolean condition = true;
@@ -35,8 +37,9 @@ public class Atividade19 {
 					break;
 				}
 				default:
-					System.out.println("Digite somente M ou F");
-					System.out.println("Digite seu sexo (M)(F)");
+					System.out.println(ConsoleColors.RED + "Digite somente M ou F" +
+							ConsoleColors.RESET);
+					System.out.print("Digite seu sexo " + ConsoleColors.BLUE_BOLD + pessoa.getNome() + "," + ConsoleColors.RESET + " (M)(F) : ");
 					sexo = scanner.next();
 					sexo = sexo.toUpperCase();
 					condition = true;
@@ -76,7 +79,7 @@ public class Atividade19 {
 				System.out.println(pessoa.getNome());
 			}
 		}
-		
+
 		scanner.close();
 	}
 
